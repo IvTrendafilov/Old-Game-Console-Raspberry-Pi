@@ -2,12 +2,7 @@
  
 |                 | **Names/Ids**  |
 |----------------:|:---------------|
-| *Team members:* | Pavel Hristov s2315424,
-                    Vladislav Avramov s2292165,
-                    Stefan Simionescu s2391821,
-                    Ivan Ivanov S2309858,
-                    Stefan Ilich s2249405,
-                    Tudor Nechiti s2268655|
+| *Team members:* | Pavel Hristov s2315424, Vladislav Avramov s2292165, Stefan Simionescu s2391821, Ivan Ivanov S2309858, Stefan Ilich s2249405, Tudor Nechiti s2268655|
 | *Team ID:*      |        28        |
 
 
