@@ -22,6 +22,7 @@ We could have chosen and executed the presentation a lot better. Since we hadnâ€
 For now the most important part is that we managed to get to grips with the Raspberry Pi on a beginner level. All of us managed to set it up and run a few commands, connect a couple of sensors, LEDs to see how they perform. Furthermore, we were able to fastly start working with Linux shell and commands, helping us in the process of understanding how the Pi functions.
 
 ### *b)* intra-personal level?
+Overall, we are a cohesive team, besides the amount of time we have been together. Helping each other is a priority for us. If someone has, for instance, resits or is not prepared enough for the test, the other team members will do their work, which is a good example of teamwork. 
 
 ## *Q4:* What are your plans for the next sprint?
 Our plans for the next sprint are:
@@ -42,8 +43,7 @@ Maybe create the interface of the project if we have time
 | Very  Sad (1)                     |                   |
 
 ## *Q6:* Which team member was most appreciated during the last sprint (only list 1) and why?
-We believe it was Stefan Ilich because he was the presenter and he helped with creating the presentation.
+We believe it was Stefan Ilich because he was the presenter and he helped with creating the presentation. He was most active in creating the slides and he also expressed his enthusiasm for presenting. He was also very active in creating all of the needed documentaton throughout the Sprint while maintaining availabilty for all meetings.
 
 ## *Q7:*  Would you like to specify any other priority detail(s)/points which could be useful for the development of your product (if any)?
 We consider using the MoSCoW priority system and our must objectives will be creating an user-friendly interface, with at least 1 properly working game. Also testing is something, which we do not want to miss, since this is how we can understand, if a function is working properly as expected. Priorities, outside developing the products, are doing regular meetings(beside the scrum ones) and most importantly helping each other, whenever one needs help.
-
