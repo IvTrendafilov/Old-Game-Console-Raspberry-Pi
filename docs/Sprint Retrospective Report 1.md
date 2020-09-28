@@ -4,10 +4,10 @@
  
 |                  | **Names/Ids**  |
 |-----------------:|:---------------|
-| *Team members:*  |Stefan Ilich, Vladislav Avramov, Ivan Trendafilov, Pavel Hristov, Tudor Nechtiti, Stefan Simonescu                |
+| *Team members:*  |Stefan Ilich, Vladislav Avramov, Ivan Trendafilov, Pavel Hristov, Tudor Nechtiti, Stefan Simonescu|
 | *Team ID:*       |        28        |
-| *Scrum  Master:* |        Stefan Ilich        |
-| *Scrum  Mentor:* |                |
+| *Scrum  Master:* |Stefan Ilich|
+| *Scrum  Mentor:* | Sibren Vasse, Stefan Leinweber|
  
 
 ## *Q1:* What are the things that went well during the last sprint?
@@ -19,6 +19,7 @@ We could have chosen and executed the presentation a lot better. Since we hadnâ€
 ## *Q3:* What did you learn during the last sprint on aâ€¦.
 
 ### *a)* Domain specific level?
+For now the most important part is that we managed to get to grips with the Raspberry Pi on a beginner level. All of us managed to set it up and run a few commands, connect a couple of sensors, LEDs to see how they perform. Furthermore, we were able to fastly start working with Linux shell and commands, helping us in the process of understanding how the Pi functions.
 
 ### *b)* intra-personal level?
 
@@ -44,3 +45,5 @@ Maybe create the interface of the project if we have time
 We believe it was Stefan Ilich because he was the presenter and he helped with creating the presentation.
 
 ## *Q7:*  Would you like to specify any other priority detail(s)/points which could be useful for the development of your product (if any)?
+We consider using the MoSCoW priority system and our must objectives will be creating an user-friendly interface, with at least 1 properly working game. Also testing is something, which we do not want to miss, since this is how we can understand, if a function is working properly as expected. Priorities, outside developing the products, are doing regular meetings(beside the scrum ones) and most importantly helping each other, whenever one needs help.
+
