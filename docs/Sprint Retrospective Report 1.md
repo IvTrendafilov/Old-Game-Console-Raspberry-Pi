@@ -6,15 +6,25 @@
 |-----------------:|:---------------|
 | *Team members:*  |Stefan Ilich, Vladislav Avramov, Ivan Trendafilov, Pavel Hristov, Tudor Nechtiti, Stefan Simonescu|
 | *Team ID:*       |        28        |
-| *Scrum  Master:* |Stefan Ilich|
+| *Scrum  Master:* |Ivan Trendafilov, Pavel Hristov, Vladi Avramov|
 | *Scrum  Mentor:* | Sibren Vasse, Stefan Leinweber|
  
 
 ## *Q1:* What are the things that went well during the last sprint?
-During the last sprint, we got ourselves satisfactorily organized for one sprint of work, also everyone’s opinion is heard and considered as an option. We strive to take out the best ideas from all the team members and combine them into the answer of our dilemmas. Our project will be interesting and intriguing for all of us, which will make the work less stressful, while still being able to spend enough time on it. 
+The things that went well throughout the first sprint were:
+Good organization. We were able to meet all the deadlines on time without any particular problems.
+Good team spirit. We had no problems with having a lot of meetings and discussions about the project that we should make.
+Good communication. Everyone considered the opinions and ideas of the other team members in regards to the project. And after a long discussion on some combinations of ideas we finally decided to make a project which would make everyone feel happy and satisfied after creation.
+Good distribution of the work concerning the project. We were able to split all the work that had to be done during the sprint pretty well. Everyone had his fair share of work depending on the skills that he possessed.
+
 
 ## *Q2:* What are the things that could have gone better during the last sprint?
-We could have chosen and executed the presentation a lot better. Since we hadn’t chosen a design beforehand, we chose one that we mostly didn’t like, but we had no time to change it last minute. After that we could have also been a little early for meetings since some of us were a little late a couple of times.
+The things that could have gone better during the first sprint are:
+The presentation. We hadn't made the decision on who would be our presenter and we also had not made the presentation. We made those two important decisions 30 minutes before the sprint meeting which was a bad idea. The theme and slides of the presentation were chosen in the last minute and they didn't make us feel good about them but we had no other choice.
+Coming on time for scrum meetings. There were a few times in which some were a bit late.
+Being prepared for scrum meetings. There were a few times in which we didn’t remember who was the scrum master of the last meeting, or we would decide it at the last moment.
+Asking more questions. We didn't ask almost any questions during the meetings.
+
 
 ## *Q3:* What did you learn during the last sprint on a….
 
@@ -25,11 +35,8 @@ For now the most important part is that we managed to get to grips with the Rasp
 Overall, we are a cohesive team, besides the amount of time we have been together. Helping each other is a priority for us. If someone has, for instance, resits or is not prepared enough for the test, the other team members will do their work, which is a good example of teamwork. 
 
 ## *Q4:* What are your plans for the next sprint?
-Our plans for the next sprint are:
-Creating a design(visual) for the project
-Creating a team contract
-UML diagrams
-Maybe create the interface of the project if we have time
+First of all, we plan to do  a wireframe of our user interface to show how our users will be interacting with the system and starting games. We may also show a design of how some of our games would look like. After that we are going to discuss what UML diagrams we will make regarding our project and making a decision will make them as a team. Next we will make our Software design document and our team contract. We will also handle these tasks together as a team and not individually. Last but not least we plan to start programming our user interface in this Sprint if time allows it. We also want everyone to get familiar with the GPIO library and experiment with sensors.
+
 
 
 ## *Q5:* Select your team performance and satisfaction score from the following. Don’t forget to justify your answer.
