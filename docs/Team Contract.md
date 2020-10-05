@@ -1,38 +1,114 @@
 # TEAM CONTRACT
 
-|                 | **Names/Ids**  |
-|----------------:|:---------------|
-| *Team ID:*      |                |
-| *Team Members:* |                | 
+|
+ | **Names/Ids** |
+| --- | --- |
+| _Team ID:_ | 28 |
+| _Team Members:_ | Stefan Ilich, Ivan Trendafilov, Vladi Avramov, Pavel Hristov, Tudor Nechiti, Stefan Simionescu |
 
 ## 1. Code of Conduct (Mention at least 10 Code of Conduct for your Team.)
 
-This is expected to understand the degree of professionalism throughout the project length. It is also a kind of warnings to the team members not following the conduct. Refer to the following examples. Please note these examples are only related to your project and its progress.
+As a team we expect:
 
-Examples: As a project team:
-* We will not tolerate rudeness in meetings as it affects the quality of the project.
-* We will share all the project related responsibilities equally.
-* We will follow the contracting rules in case we find any problems with our team.
-* We will be disciplined and honest throughout the project.
-* We will follow the Red/Green/Orange procedure for any kind of warnings/awards for extra efforts by a team member.
-* We will respect each other views and focus on the project quality.
-* We will never afraid of learning new things to improve productivity.
+- everyone to be on meetings in time or the member to notify the others, if trouble occurs.
+- everyone to contribute equally with the others in the field he is the best in.
+- everyone to share his opinion on the topics discussed.
+- to behave in a nice manner with one another.
+- to admit, if you have a problem, so it can be solved together and easier.
+- decisions to be made, only when everyone is there.
+- everyone to be motivated to work on the project.
+- everyone to put the team&#39;s needs before our individual desires.
+- everyone to give feedback and not to accept it as criticism.
+- everyone to do his work in time.
 
 ## 2. Project Goals? (Mention at least 5)
 
+- We would like to build an interactive retro gaming console in order to show our users classic games that may have been forgotten
+- We want to encourage people to make games of their own and add them to our console
+- We want to create the retro gaming console by using the Raspberry Pi as a controller with sensors. This will help us master many concepts regarding the Raspberry Pi and improve our programming skills
+- By working as a team and striving for the same goal we hope to improve our overall teamwork skill and master Scrum.
+- As a team we want to make our users happy and satisfied with the gaming experience
+
 ## 3. Strengths and Weaknesses (Mention at least 5)
+
+Strengths:
+
+- The communication and comprehension between each team member is excellent.
+- The team is motivated for learning new concepts in programming and achieving satisfactory results.
+- Everyone has different skills with which he can contribute to the team&#39;s work.
+
+Weaknesses:
+
+- In every meeting, a team member is late for different reasons.
+- We procrastinate most of the work, until the last available day.
+- We tend to spend a lot of time on trying to perfect an idea instead of its implementation.
 
 ## 4. Team meeting ground rules (Mention at least 3)
 
-* Participation (What is your group planning for team participation?):
-* Communication (How do you communicate with each other? Any rules for communication?):
-* Problem Solving ( What approach you follow to solve a project task?):
-* Decision Making (How do you decide the number of project-related tasks and the team member  to complete the task? Elaborate)
-* Handling Conflict (Any conflicts you encountered before? How did you handle that or how will you react on the team conflicts?):
-* Deadlock Situation (Who will you approach to continue the progress of your project due to a kind of disagreements within your team?)
+- Participation
+
+We will have regular meetings(aside from the Scrum ones) in order to discuss how everyone is doing and help each other out
+
+We would like everyone to participate in the meetings so that the team can be synchronized.
+
+Of course we will arrange the meetings in a time suitable for everyone.
+
+Everyone who cannot participate in a meeting must inform the others
+
+- Communication
+
+We want everyone to communicate with each other so that the team can work together
+
+When someone is feeling sick or is busy we want them to inform the team if they will miss a meeting or cannot do a certain task.
+
+When someone feels a task is too hard for them or they have too much work we want them to inform the team so that we can come up with a solution.
+
+- Problem Solving
+
+First the task is given to a specific number of members depending on the difficulty.
+
+After that we would like a team member to mention during a meeting if he/she needs help for his share of work if he is incapable of doing it or is running late on the deadlines.
+
+If a task proves too difficult to be handled by 1 or 2 members we will hold a meeting specifically for that task and then do it together as a team.
+
+- Decision Making
+
+We start by holding a meeting to determine what tasks need to be done. For example: making the presentation, the mockup, group contract, software design document.
+
+After that we split the tasks between our members based on their strengths and team roles. We strive to have at least 2-3 members doing an important task.
+
+Finally if a task is important and proves difficult we give it our full attention and do it as a team so that we can get it out of the way faster.
+
+- Handling Conflict
+
+We want everyone to respect each other. If it so happens that a conflict occurs we have the following rules:
+
+The conflict topic must be informed to the entire team.
+
+After that the team will discuss the conflict together as a whole and come up with a solution.
+
+Members are not allowed to insult or act rude with each other in case of a conflict.
 
 ## 5. Areas for Growth (Mention at least 5)
 
-## Team members' Signature
+- Planning skills
+- Time management
+- Adaptability
+- Productivity
+- Accept feedback
 
- I undersigned, hereby declare that I have read, agreed, and accepted all the rules and commitments mentioned in this document during the project, Course: Computer Systems, Module 5 (2020-21).
+## Team members&#39; Signature
+
+Stefan Ilich: Stefan Ilich,5.10.2020. Enschede
+
+Vladi Avramov: Vladi Avramov, 5.10.2020,Enschede
+
+Tudor Nechiti: Tudor Nechiti, 5.10.2020, Enschede
+
+Stefan Simionescu: Stefan Simionescu, 05.10.2020,Enschede
+
+Ivan Trendafilov: Ivan Trendafilov, 05.10.2020, Enshece
+
+Pavel Hristov : Pavel Hristov, 05.10.2020, Enschede
+
+I undersigned, hereby declare that I have read, agreed, and accepted all the rules and commitments mentioned in this document during the project, Course: Computer Systems, Module 5 (2020-21).
