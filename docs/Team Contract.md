@@ -36,12 +36,16 @@ Strengths:
 - The communication and comprehension between each team member is excellent.
 - The team is motivated for learning new concepts in programming and achieving satisfactory results.
 - Everyone has different skills with which he can contribute to the team&#39;s work.
+- Every team member is ready to help other members if they are running late with their share of work.
+- Everyone is open and acceptant of constructive criticism if it is positive.
 
 Weaknesses:
 
 - In every meeting, a team member is late for different reasons.
 - We procrastinate most of the work, until the last available day.
 - We tend to spend a lot of time on trying to perfect an idea instead of its implementation.
+- There is some misscomunication between the team members.
+- There are times in which no one from the team members knows exactly what work must be done for the project.
 
 ## 4. Team meeting ground rules (Mention at least 3)
 
