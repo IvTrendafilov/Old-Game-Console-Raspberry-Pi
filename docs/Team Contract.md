@@ -96,9 +96,9 @@ Members are not allowed to insult or act rude with each other in case of a confl
 ## 5. Areas for Growth (Mention at least 5)
 
 - Planning skills - gained new skills through usage of programs for joined project management
-- Time management - furthering the planning skills each of us wants to work on his personal time management skills while also receiving feedback from his team members
-- Adaptability - through the sprints grow to be a better team, evenly distributing work if someone is not available
-- Productivity - through the better planning and adaptability we plan to further improve our team productivity
+- Time management - furthering the planning skills each of us wants to work on his personal time management skills while also receiving feedback from his team members 
+- Adaptability - through the sprints grow to be a better team, evenly distributing work if someone is not available, and also how to adapt the fact that pairs have to work together
+- Productivity - through the better planning and adaptability we plan to further improve our team productivity, rapidly gaining new skills on the RPi
 - Accept feedback - since some of us are rather conservative and are not always open to constructive criticism from team members or else, we'll work towards a more open environment between the members
 
 ## Team members&#39; Signature
