@@ -5,9 +5,9 @@
 |                  | **Names/Ids**  |
 |-----------------:|:---------------|
 | *Team members:*  |       Stefan Ilich, Vladislav Avramov, Ivan Trendafilov, Pavel Hristov, Tudor Nechtiti, Stefan Simonescu         |
-| *Team ID:*       |                |
-| *Scrum  Master:* |                |
-| *Scrum  Mentor:* |                |
+| *Team ID:*       |       28         |
+| *Scrum  Master:* |       Tudor Nechtiti, Stefan Simonescu,Stefan Ilich         |
+| *Scrum  Mentor:* |    Sibren Vasse, Stefan Leinweber            |
  
 
 ## *Q1:* What are the things that went well during the last sprint? 
