@@ -4,7 +4,7 @@
  
 |                  | **Names/Ids**  |
 |-----------------:|:---------------|
-| *Team members:*  |                |
+| *Team members:*  |       Stefan Ilich, Vladislav Avramov, Ivan Trendafilov, Pavel Hristov, Tudor Nechtiti, Stefan Simonescu         |
 | *Team ID:*       |                |
 | *Scrum  Master:* |                |
 | *Scrum  Mentor:* |                |
