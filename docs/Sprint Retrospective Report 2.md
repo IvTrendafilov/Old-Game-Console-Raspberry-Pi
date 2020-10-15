@@ -47,9 +47,7 @@ In the next sprint the base idea is to ramp up development. In general, we are g
 | **Satisfaction-level  and Value** | **Justification** |
 | --------------------------------- | ----------------- |
 | Very  Happy (5)                   |                   |
-| Happy  (4)                        |     
-As always we could have been more organized and to have started work a little earlier in order to have space for mistakes, but in the end when we did our work, we did it pretty well and succeeded in the goals that we had set - mainly to clear up any flaws in the idea and to get to work on the sensor implementation.
-              |
+| Happy  (4)                        |  As always we could have been more organized and to have started work a little earlier in order to have space for mistakes, but in the end when we did our work, we did it pretty well and succeeded in the goals that we had set - mainly to clear up any flaws in the idea and to get to work on the sensor implementation.   
 | Okay  (3)                         |                   |
 | Sad  (2)                          |                   |
 | Very  Sad (1)                     |                   |
