@@ -31,7 +31,12 @@ Confusion in the team - there was a bit of confusion between the team members. W
 ## *Q3:* What did you learn during the last sprint on a….
 
 ### *a)* Domain specific level?
-We were able to understand and make our touch sensors work without problems. We were able to connect them to raspberry pi, after which we were able to write code which would receive the input from them. We were also able to write one of the games in pygames and the interface for the games.
+We were able to understand and make our touch sensors work without problems and receive input from them. 
+We were also able to write one of the games with the pygame library.
+We also created the user interface of our console with the pygame, though it was a bit tricky.
+We learned that integrating the sensors with is not so easy so we first created a game that uses a keyboard.
+Finally we learned that running pygame on the terminal was not possible and decided to download the VNC viewer to look at the Pi's desktop.
+
 
 
 ### *b)* intra-personal level?
