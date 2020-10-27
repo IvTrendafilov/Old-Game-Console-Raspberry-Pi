@@ -1,7 +1,7 @@
 import pygame
 import pygame_menu
 from pygame_menu.themes import Theme
-from games import pong
+from games import pong,shmup
 
 import time
 
@@ -10,7 +10,7 @@ pygame.init()
 infoObject = pygame.display.Info()
 # We make the display to be full screen
 surface = pygame.display.set_mode((infoObject.current_w, infoObject.current_h))
-mainMenuBackground = pygame_menu.baseimage.BaseImage("background-mainmenu.jpg", pygame_menu.baseimage.IMAGE_MODE_FILL,
+mainMenuBackground = pygame_menu.baseimage.BaseImage("images/background-mainmenu.jpg", pygame_menu.baseimage.IMAGE_MODE_FILL,
                                                      (0, 0))
 
 retroTheme = Theme()
@@ -32,16 +32,27 @@ retroTheme.widget_font = pygame_menu.font.FONT_8BIT
 
 score = 0
 def pongGame():
+
     gameMenu.disable()
     global score
     score = pong.startGame()
+    global surface
+    surface = pygame.display.set_mode((infoObject.current_w, infoObject.current_h))
     scoreEndGame.set_title("Score: " + str(score))
+    tryAgainButton.update_callback(pongGame)
     endGameMenu.enable()
     pass
 
 
 def shmupGame():
-
+    gameMenu.disable()
+    global score
+    score = shmup.main()
+    global surface
+    surface = pygame.display.set_mode((infoObject.current_w, infoObject.current_h))
+    scoreEndGame.set_title("Score: " + str(score))
+    tryAgainButton.update_callback(shmupGame)
+    endGameMenu.enable()
     pass
 
 
@@ -73,7 +84,8 @@ def exitEndGameMenu():
     endGameMenu.disable()
     mainMenu.enable()
 
-
+pygame.display.set_caption("Main Menu!")
+pygame.display.set_icon(pygame.image.load("images/retroIcon.png"))
 # Main Menu configuration
 mainMenu = pygame_menu.Menu(infoObject.current_h, infoObject.current_w, title='Welcome to retro game arcade',
                             theme=retroTheme, mouse_enabled=False)

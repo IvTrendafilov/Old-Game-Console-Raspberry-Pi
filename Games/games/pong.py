@@ -8,13 +8,14 @@ def startGame():
     width = 1500
     height = 1000
     screen = pygame.display.set_mode((width, height))
+    pygame.display.set_caption("Pong")
 
-    ball = pygame.image.load("beach-ball.png")
+    ball = pygame.image.load("images/beach-ball.png")
     ballrect = ball.get_rect()
     ballrect.top = random.randint(0, 800)
     ballrect.left = 150
 
-    line = pygame.image.load("line.png")
+    line = pygame.image.load("images/line.png")
     linerect = line.get_rect()
     linerect.top = height / 2
     linerect.left = 40
@@ -45,6 +46,7 @@ def startGame():
         ballrect = ballrect.move(speed)
         if ballrect.left < 130 or ballrect.right > width:
             if ballrect.left < 130:
+                pygame.display.set_caption("Main Menu!")
                 return score
             else:
                 speed[0] = -speed[0]
