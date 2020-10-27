@@ -11,8 +11,8 @@ def startGame():
 
     ball = pygame.image.load("beach-ball.png")
     ballrect = ball.get_rect()
-    ballrect.top = random.randint(0, 1000)
-    ballrect.left = 100
+    ballrect.top = random.randint(0, 800)
+    ballrect.left = 150
 
     line = pygame.image.load("line.png")
     linerect = line.get_rect()
@@ -28,6 +28,7 @@ def startGame():
 
     while inGame:
 
+
         for event in pygame.event.get():
             if event.type == pygame.QUIT: sys.exit()
 
@@ -42,15 +43,14 @@ def startGame():
 
         # Ball movement
         ballrect = ballrect.move(speed)
-        if ballrect.left < 39 or ballrect.right > width:
-            if ballrect.left < 39:
+        if ballrect.left < 130 or ballrect.right > width:
+            if ballrect.left < 130:
                 return score
             else:
                 speed[0] = -speed[0]
         if ballrect.top < 0 or ballrect.bottom > height:
             speed[1] = -speed[1]
         if ballrect.colliderect(linerect):
-            speed[1] = -speed[1]
             speed[0] = -speed[0]
             score = score + 1
 
