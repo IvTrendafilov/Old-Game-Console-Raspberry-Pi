@@ -70,6 +70,7 @@ We were able to meet all the sprint deadlines with the plan that we had. At the 
 Some of the phrases that we are using are
 User interface/game interface – it implies that we are talking about the interface that all the user can use when they run our application, in which they can choose between different games.
 Controls – implies the touch sensors that we are using for the games.
+Those are all the phrases that we could think about.
 
    
 
