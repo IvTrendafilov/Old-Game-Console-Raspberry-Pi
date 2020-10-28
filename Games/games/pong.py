@@ -1,5 +1,7 @@
 import pygame, sys, random
 from pygame import key
+import RPi.GPIO as GPIO
+import time
 
 
 
@@ -29,18 +31,38 @@ def startGame():
 
     while inGame:
 
-
+        GPIO.setup(15, GPIO.IN)  # ARROW UP
+        # GPIO.setup(8.GPIO.IN) #ARROW DOWN
+        #     GPIO.setup(13.GPIO.IN) #ARROW LEFT
+        GPIO.setup(13, GPIO.IN)  # ARROW RIGHT
+        if GPIO.input(15):  # ARROW UP
+             if linerect.top > 0:
+                  linerect.top = linerect.top - 3
+                  time.sleep(0.3)
+        # if GPIO.input(8): #ARROW DOWN
+        # mainMenu._select(mainMenu.get_index() + 1, 0)
+        # time.sleep(0.2)
+        if GPIO.input(13):  # ARROW RIGHT or ARROW DOWN for Pong game
+            if linerect.top < height - 93:
+                  linerect.top = linerect.top + 3
+                  time.sleep(0.3)
+        # WE DO NOT NEED ARROW LEFT FOR NOW
+        GPIO.setup(13, GPIO.OUT)
+        GPIO.output(13, GPIO.LOW)
+        GPIO.setup(15, GPIO.OUT)
+        GPIO.output(15, GPIO.LOW)
         for event in pygame.event.get():
-            if event.type == pygame.QUIT: sys.exit()
+            if event.type == pygame.QUIT:
+                sys.exit()
 
         # Line controller
-        key = pygame.key.get_pressed()
-        if key[pygame.K_DOWN]:
-            if linerect.top < height - 93:
-                linerect.top = linerect.top + 3
-        if key[pygame.K_UP]:
-            if linerect.top > 0:
-                linerect.top = linerect.top - 3
+        #key = pygame.key.get_pressed()
+        #if key[pygame.K_DOWN]:
+            #if linerect.top < height - 93:
+                #linerect.top = linerect.top + 3
+        #if key[pygame.K_UP]:
+            #if linerect.top > 0:
+                #linerect.top = linerect.top - 3
 
         # Ball movement
         ballrect = ballrect.move(speed)
