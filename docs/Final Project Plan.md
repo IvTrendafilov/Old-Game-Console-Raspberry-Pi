@@ -59,12 +59,17 @@ Overall, our full strategy led to a product that exceeded our expectations – g
 ##  Reference
 
 ##   I. Acknowledgement
+Our two TA’s  Sibren Vasse and Stefan Leinweber were really helpful with the additional feedback that they were providing. That feedback helped us plan how we should develop our project throughout the different sprints so that we would have enough time to manage with the deadlines. It also helped us stay on the right road when creating different parts of the project. Also, the student feedback that we were receiving after every sprint presentation was really helpful to us to understand what parts of our project and product look good and what parts of the project need more developing so that they could be more user friendly.
+
 
 ##   II. Reflection
+We were able to meet all the sprint deadlines with the plan that we had. At the beginning we made a plan that was a bit too much compared to what we could handle, but with the help of our TA’s we were able to create a new schedule for the development of the project which allowed us to follow it without any problems. We had some small problems but they didn’t overcompliment the project and we were still able to manage with the planning. One of the biggest problems that we had was with the touch sensors. We burned out some of them and had to replace them which was close to putting us behind schedule but in the end we managed.
+
 
 ##   III. Appendix and Glossary
-
-   
+Some of the phrases that we are using are
+User interface/game interface – it implies that we are talking about the interface that all the user can use when they run our application, in which they can choose between different games.
+Controls – implies the touch sensors that we are using for the games.
 
    
 
