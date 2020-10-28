@@ -54,3 +54,4 @@ In the next sprint we plan to do full integration of the games with their respec
 ## *Q6:* Which team member was most appreciated during the last sprint (only list 1) and why?
 Ivan Trendafilov is this week’s most appreciated member. The reason being that with all our assignments, project meetings and exams, he still managed to spend time and weigh in on every meeting, decision, development and managed to sink in a ton of time on our Law assignment and helped so much that there was just no other option.
 ## *Q7:*  Would you like to specify any other priority detail(s)/points which could be useful for the development of your product (if any)?
+For now, we have not found any new priotiries for the development of our product. We have already started the development of our product and the idea of what should be done is crystal clear to us. We now know what exactly has to be developed so that the product is useful and are working on developing them.
