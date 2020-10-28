@@ -2,6 +2,7 @@ import pygame
 import pygame_menu
 from pygame_menu.themes import Theme
 from games import pong,shmup
+import RPi.GPIO as GPIO
 
 import time
 
@@ -24,11 +25,8 @@ retroTheme.widget_font = pygame_menu.font.FONT_8BIT
 
 # Setup GPIO
 # UNCOMMENT WHEN YOU TRY IT WITH SENSORS
-# GPIO.setmode(GPIO.BOARD)
-# GPIO.setup(7.GPIO.IN) #ARROW UP
-# GPIO.setup(8.GPIO.IN) #ARROW DOWN
-# GPIO.setup(11.GPIO.IN) #ARROW LEFT
-# GPIO.setup(12.GPIO.IN) #ARROW RIGHT
+GPIO.setmode(GPIO.BOARD)
+
 
 score = 0
 def pongGame():
@@ -40,6 +38,8 @@ def pongGame():
     surface = pygame.display.set_mode((infoObject.current_w, infoObject.current_h))
     scoreEndGame.set_title("Score: " + str(score))
     tryAgainButton.update_callback(pongGame)
+    highScores = open("pongHighScores.txt","a")
+    highScores.write(str(score)+"\n")
     endGameMenu.enable()
     pass
 
@@ -52,45 +52,77 @@ def shmupGame():
     surface = pygame.display.set_mode((infoObject.current_w, infoObject.current_h))
     scoreEndGame.set_title("Score: " + str(score))
     tryAgainButton.update_callback(shmupGame)
+    highScores = open("shootersHighScores.txt", "a")
+    highScores.write(str(score) + "\n")
     endGameMenu.enable()
     pass
 
 
-def game3():
+def flappyBird():
     pass
 
+def enterHighScorePong():
+    file = open("pongHighScores.txt", "r")
+    d = file.readlines()
+    d.sort(reverse=True)
+
+def exitHighScorePong():
+    pass
+
+def enterHighScoreShooters():
+    pass
+
+def exitHighScoreShooters():
+    pass
+
+def enterHighScoreFlappyBird():
+    pass
+
+def exitHighScoreFlappyBird():
+    pass
 
 def enterChooseGameMenu():
     gameMenu.enable()
+    global currentMenu
+    currentMenu=gameMenu
     mainMenu.disable()
 
 
 def exitChooseGameMenu():
     gameMenu.disable()
+    global currentMenu
+    currentMenu=mainMenu
     mainMenu.enable()
 
 
-def enterSettingsMenu():
-    settingsMenu.enable()
+def enterHighScoreMenu():
+    highScoreMenu.enable()
+    global currentMenu
+    currentMenu=highScoreMenu
     mainMenu.disable()
 
 
-def exitSettingsMenu():
-    settingsMenu.disable()
+def exitHighScoreMenu():
+    highScoreMenu.disable()
+    global currentMenu
+    currentMenu=mainMenu
     mainMenu.enable()
 
 
 def exitEndGameMenu():
     endGameMenu.disable()
+    global currentMenu
+    currentMenu=mainMenu
     mainMenu.enable()
 
 pygame.display.set_caption("Main Menu!")
 pygame.display.set_icon(pygame.image.load("images/retroIcon.png"))
+
 # Main Menu configuration
 mainMenu = pygame_menu.Menu(infoObject.current_h, infoObject.current_w, title='Welcome to retro game arcade',
                             theme=retroTheme, mouse_enabled=False)
 mainMenu.add_button('Choose a game', enterChooseGameMenu)
-mainMenu.add_button('Settings', enterSettingsMenu)
+mainMenu.add_button('High scores', enterHighScoreMenu)
 mainMenu.add_button('Quit', pygame_menu.events.EXIT)
 
 # Choose a game menu configuration
@@ -98,19 +130,18 @@ gameMenu = pygame_menu.Menu(infoObject.current_h, infoObject.current_w, title='W
                             theme=retroTheme, mouse_enabled=False)
 gameMenu.add_button('Pong', pongGame)
 gameMenu.add_button('Shooters', shmupGame)
-gameMenu.add_button('Game 3', game3)
+gameMenu.add_button('Game 3', flappyBird)
 gameMenu.add_button('Back', exitChooseGameMenu)
 gameMenu.disable()
 
 # Settings menu configuration
-settingsMenu = pygame_menu.Menu(infoObject.current_h, infoObject.current_w, title='Settings',
-                                theme=retroTheme, mouse_enabled=False)
-settingsMenu.add_text_input('Name :', default='Enter you name')
-settingsMenu.add_selector('Test :', [('test1', 1), ('test2', 2)])
-settingsMenu.add_selector('Difficulty :', [('Hard', 1), ('Easy', 2)])
-settingsMenu.add_button('Save', pongGame)
-settingsMenu.add_button('Back', exitSettingsMenu)
-settingsMenu.disable()
+highScoreMenu = pygame_menu.Menu(infoObject.current_h, infoObject.current_w, title='Settings',
+                                 theme=retroTheme, mouse_enabled=False)
+highScoreMenu.add_button("Pong",enterHighScorePong)
+highScoreMenu.add_button("Shooters",enterHighScoreShooters)
+highScoreMenu.add_button("Flappy Bird",enterHighScoreFlappyBird)
+highScoreMenu.add_button('Back', exitHighScoreMenu)
+highScoreMenu.disable()
 
 # End of game menu
 endGameMenu = pygame_menu.Menu(infoObject.current_h, infoObject.current_w, title='Game Over',
@@ -120,17 +151,30 @@ tryAgainButton = endGameMenu.add_button('Try again', pongGame)
 endGameMenu.add_button('Go to main menu', exitEndGameMenu)
 endGameMenu.disable()
 
+#High score display
+highScoreDisplay = pygame_menu.Menu(infoObject.current_h, infoObject.current_w, title='High Scores',
+                                 theme=retroTheme, mouse_enabled=False)
+highScoreDisplay.disable()
+currentMenu=mainMenu
 while True:
-    # if GPIO.input(7): #ARROW UP
-        # mainMenu._select(mainMenu.get_index() - 1, 2)
-        # time.sleep(0.2)
+    GPIO.setup(15,GPIO.IN) #ARROW UP
+    # GPIO.setup(8.GPIO.IN) #ARROW DOWN
+#     GPIO.setup(13.GPIO.IN) #ARROW LEFT
+    GPIO.setup(13,GPIO.IN) #ARROW RIGHT
+    if GPIO.input(15): #ARROW UP
+        currentMenu._select(currentMenu.get_index() + 1, 2)
+        time.sleep(0.3)
     # if GPIO.input(8): #ARROW DOWN
         # mainMenu._select(mainMenu.get_index() + 1, 0)
         # time.sleep(0.2)
-    # if GPIO.input(12): #ARROW RIGHT
-        # mainMenu.get_selected_widget().apply()
-        # time.sleep(0.2)
+    if GPIO.input(13): #ARROW RIGHT
+        currentMenu.get_selected_widget().apply()
+        time.sleep(0.3)
     #WE DO NOT NEED ARROW LEFT FOR NOW
+    GPIO.setup(13,GPIO.OUT)
+    GPIO.output(13,GPIO.LOW)
+    GPIO.setup(15,GPIO.OUT)
+    GPIO.output(15,GPIO.LOW)
     events = pygame.event.get()
 
     for event in events:
@@ -144,10 +188,10 @@ while True:
         mainMenu.update(events)
         if mainMenu.is_enabled():
             mainMenu.draw(surface)
-    if settingsMenu.is_enabled() and inMainMenu == False:
-        settingsMenu.update(events)
-        if settingsMenu.is_enabled():
-            settingsMenu.draw(surface)
+    if highScoreMenu.is_enabled() and inMainMenu == False:
+        highScoreMenu.update(events)
+        if highScoreMenu.is_enabled():
+            highScoreMenu.draw(surface)
     if gameMenu.is_enabled() and inMainMenu == False:
         inGameMenu = True
         gameMenu.update(events)
