@@ -2,7 +2,7 @@ import pygame
 import pygame_menu
 from pygame_menu.themes import Theme
 from games import pong,shmup
-import RPi.GPIO as GPIO
+#import RPi.GPIO as GPIO
 
 import time
 
@@ -23,14 +23,10 @@ retroTheme.background_color = mainMenuBackground
 retroTheme.title_font = pygame_menu.font.FONT_8BIT
 retroTheme.widget_font = pygame_menu.font.FONT_8BIT
 
-# Setup GPIO
-# UNCOMMENT WHEN YOU TRY IT WITH SENSORS
-GPIO.setmode(GPIO.BOARD)
-
-
+#Score variable used to display score in end screen
 score = 0
-def pongGame():
 
+def pongGame():
     gameMenu.disable()
     global score
     score = pong.startGame()
@@ -39,7 +35,8 @@ def pongGame():
     scoreEndGame.set_title("Score: " + str(score))
     tryAgainButton.update_callback(pongGame)
     highScores = open("pongHighScores.txt","a")
-    highScores.write(str(score)+"\n")
+    if score != 0:
+        highScores.write(str(score)+"\n")
     endGameMenu.enable()
     pass
 
@@ -53,7 +50,8 @@ def shmupGame():
     scoreEndGame.set_title("Score: " + str(score))
     tryAgainButton.update_callback(shmupGame)
     highScores = open("shootersHighScores.txt", "a")
-    highScores.write(str(score) + "\n")
+    if score!=0:
+        highScores.write(str(score) + "\n")
     endGameMenu.enable()
     pass
 
@@ -62,24 +60,58 @@ def flappyBird():
     pass
 
 def enterHighScorePong():
+    limit = 5
+    highScoreMenu.disable()
+    highScoreDisplay.clear()
     file = open("pongHighScores.txt", "r")
     d = file.readlines()
     d.sort(reverse=True)
+    highScoreDisplay.add_label("Pong High Scores",selectable=False)
+    for i in d:
+        if limit == 0:
+            break
+        highScoreDisplay.add_label(str(i),selectable=False)
+        limit = limit - 1
+    highScoreDisplay.add_button("Back",exitHighScoreDisplay)
+    highScoreDisplay.enable()
 
-def exitHighScorePong():
+def exitHighScoreDisplay():
+    highScoreDisplay.disable()
+    highScoreMenu.enable()
     pass
 
 def enterHighScoreShooters():
-    pass
-
-def exitHighScoreShooters():
+    limit = 5
+    highScoreMenu.disable()
+    highScoreDisplay.clear()
+    file = open("shootersHighScores.txt", "r")
+    d = file.readlines()
+    d.sort(reverse=True)
+    highScoreDisplay.add_label("Shooters High Scores", selectable=False)
+    for i in d:
+        if limit == 0:
+            break
+        highScoreDisplay.add_label(str(i), selectable=False)
+        limit = limit - 1
+    highScoreDisplay.add_button("Back", exitHighScoreDisplay)
+    highScoreDisplay.enable()
     pass
 
 def enterHighScoreFlappyBird():
-    pass
-
-def exitHighScoreFlappyBird():
-    pass
+    limit = 5
+    highScoreMenu.disable()
+    highScoreDisplay.clear()
+    file = open("flappyBirdHighScores.txt", "r")
+    d = file.readlines()
+    d.sort(reverse=True)
+    highScoreDisplay.add_label("Flappy Bird High Scores", selectable=False)
+    for i in d:
+        if limit == 0:
+            break
+        highScoreDisplay.add_label(str(i), selectable=False)
+        limit = limit - 1
+    highScoreDisplay.add_button("Back", exitHighScoreDisplay)
+    highScoreDisplay.enable()
 
 def enterChooseGameMenu():
     gameMenu.enable()
@@ -155,26 +187,35 @@ endGameMenu.disable()
 highScoreDisplay = pygame_menu.Menu(infoObject.current_h, infoObject.current_w, title='High Scores',
                                  theme=retroTheme, mouse_enabled=False)
 highScoreDisplay.disable()
+#Used to navigate with GPIO through current menu
 currentMenu=mainMenu
+
+# Setup GPIO
+# UNCOMMENT WHEN YOU TRY IT WITH SENSORS
+# GPIO.setmode(GPIO.BOARD)
+
 while True:
-    GPIO.setup(15,GPIO.IN) #ARROW UP
-    # GPIO.setup(8.GPIO.IN) #ARROW DOWN
-#     GPIO.setup(13.GPIO.IN) #ARROW LEFT
-    GPIO.setup(13,GPIO.IN) #ARROW RIGHT
-    if GPIO.input(15): #ARROW UP
-        currentMenu._select(currentMenu.get_index() + 1, 2)
-        time.sleep(0.3)
-    # if GPIO.input(8): #ARROW DOWN
-        # mainMenu._select(mainMenu.get_index() + 1, 0)
-        # time.sleep(0.2)
-    if GPIO.input(13): #ARROW RIGHT
-        currentMenu.get_selected_widget().apply()
-        time.sleep(0.3)
-    #WE DO NOT NEED ARROW LEFT FOR NOW
-    GPIO.setup(13,GPIO.OUT)
-    GPIO.output(13,GPIO.LOW)
-    GPIO.setup(15,GPIO.OUT)
-    GPIO.output(15,GPIO.LOW)
+    # #GPIO CONTROLLERS SETUP
+    # GPIO.setup(15,GPIO.IN) #ARROW UP
+    # GPIO.setup(13,GPIO.IN) #ARROW DOWN
+    # GPIO.setup(16,GPIO.IN) #ARROW RIGHT
+    # if GPIO.input(15): #ARROW UP
+    #     currentMenu._select(currentMenu.get_index() + 1, 2)
+    #     time.sleep(0.3)
+    # if GPIO.input(13): #ARROW DOWN
+    #     currentMenu._select(mainMenu.get_index() + 1, 0)
+    #     time.sleep(0.3)
+    # if GPIO.input(16): #ARROW RIGHT
+    #     currentMenu.get_selected_widget().apply()
+    #     time.sleep(0.3)
+    #
+    # GPIO.setup(13,GPIO.OUT)
+    # GPIO.output(13,GPIO.LOW)
+    # GPIO.setup(15, GPIO.OUT)
+    # GPIO.output(15, GPIO.LOW)
+    # GPIO.setup(16, GPIO.OUT)
+    # GPIO.output(16, GPIO.LOW)
+
     events = pygame.event.get()
 
     for event in events:
@@ -183,12 +224,14 @@ while True:
 
     inMainMenu = False
     inGameMenu = False
+    inHighScoreMenu = False
     if mainMenu.is_enabled():
         inMainMenu = True
         mainMenu.update(events)
         if mainMenu.is_enabled():
             mainMenu.draw(surface)
     if highScoreMenu.is_enabled() and inMainMenu == False:
+        inHighScoreMenu=True
         highScoreMenu.update(events)
         if highScoreMenu.is_enabled():
             highScoreMenu.draw(surface)
@@ -201,5 +244,9 @@ while True:
         endGameMenu.update(events)
         if endGameMenu.is_enabled():
             endGameMenu.draw(surface)
+    if highScoreDisplay.is_enabled() and inMainMenu == False and inHighScoreMenu == False:
+        highScoreDisplay.update(events)
+        if highScoreDisplay.is_enabled():
+            highScoreDisplay.draw(surface)
 
     pygame.display.update()
