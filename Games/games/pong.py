@@ -61,8 +61,8 @@ def startGame():
 
         # Ball movement
         ballrect = ballrect.move(speed)
-        if ballrect.left < 80 or ballrect.right > width:
-            if ballrect.left < 80:
+        if ballrect.left < 89 or ballrect.right > width:
+            if ballrect.left < 89:
                 pygame.display.set_caption("Main Menu!")
                 return score
             else:
