@@ -1,8 +1,8 @@
 import pygame
 import pygame_menu
 from pygame_menu.themes import Theme
-from games import pong,shmup
-import RPi.GPIO as GPIO
+from games import pong,shmup,flappy
+# import RPi.GPIO as GPIO
 
 import time
 
@@ -35,7 +35,7 @@ def pongGame():
     scoreEndGame.set_title("Score: " + str(score))
     tryAgainButton.update_callback(pongGame)
     highScores = open("pongHighScores.txt","a")
-    if score != 0 and (score is not None and score.is_valid()):
+    if score != 0 and score is not None:
         highScores.write(str(score)+"\n")
     global currentMenu
     currentMenu=endGameMenu
@@ -52,7 +52,7 @@ def shmupGame():
     scoreEndGame.set_title("Score: " + str(score))
     tryAgainButton.update_callback(shmupGame)
     highScores = open("shootersHighScores.txt", "a")
-    if score != 0 and (score is not None and score.is_valid()):
+    if score != 0 and score is not None:
         highScores.write(str(score)+"\n")
     global currentMenu
     currentMenu=endGameMenu
@@ -61,6 +61,19 @@ def shmupGame():
 
 
 def flappyBird():
+    gameMenu.disable()
+    global score
+    score = flappy.main()
+    global surface
+    surface = pygame.display.set_mode((infoObject.current_w, infoObject.current_h))
+    scoreEndGame.set_title("Score: " + str(score))
+    tryAgainButton.update_callback(flappyBird)
+    highScores = open("flappyBirdHighScores.txt", "a")
+    if score != 0 and score is not None:
+        highScores.write(str(score) + "\n")
+    global currentMenu
+    currentMenu = endGameMenu
+    endGameMenu.enable()
     pass
 
 def enterHighScorePong():
@@ -121,7 +134,7 @@ def enterHighScoreFlappyBird():
     scoresStringArray = file.readlines()
     for i in scoresStringArray:
         i.replace("\n","")
-    scoresIntegerArray = [int(numeric_string) for numberic_string in scoresIntegerArray]
+    scoresIntegerArray = [int(numeric_string) for numeric_string in scoresStringArray]
     scoresIntegerArray.sort(reverse=True)
     highScoreDisplay.add_label("Flappy Bird High Scores", selectable=False)
     for i in scoresIntegerArray:
@@ -183,7 +196,7 @@ gameMenu = pygame_menu.Menu(infoObject.current_h, infoObject.current_w, title='W
                             theme=retroTheme, mouse_enabled=False)
 gameMenu.add_button('Pong', pongGame)
 gameMenu.add_button('Shooters', shmupGame)
-gameMenu.add_button('Game 3', flappyBird)
+gameMenu.add_button('Flappy Bird', flappyBird)
 gameMenu.add_button('Back', exitChooseGameMenu)
 gameMenu.disable()
 
@@ -213,37 +226,37 @@ currentMenu=mainMenu
 
 # Setup GPIO
 # UNCOMMENT WHEN YOU TRY IT WITH SENSORS
-GPIO.setmode(GPIO.BOARD)
+# GPIO.setmode(GPIO.BOARD)
 
 while True:
-    #GPIO CONTROLLERS SETUP
-    GPIO.setup(13,GPIO.OUT)
-    GPIO.output(13,GPIO.LOW)
-    GPIO.setup(15, GPIO.OUT)
-    GPIO.output(15, GPIO.LOW)
-    GPIO.setup(40, GPIO.OUT)
-    GPIO.output(40, GPIO.LOW)
-    time.sleep(0.1)
-    GPIO.setup(15,GPIO.IN) #ARROW UP
-    GPIO.setup(13,GPIO.IN) #ARROW DOWN
-    GPIO.setup(40,GPIO.IN) #ARROW RIGHT
-    menuSize=0
-    if currentMenu==mainMenu or currentMenu==endGameMenu:
-        menuSize=2
-    elif currentMenu==highScoreMenu or currentMenu==gameMenu:
-        menuSize=3
-    elif currentMenu==highScoreDisplay:
-        menuSize=0
-        
-    if GPIO.input(15): #ARROW UP
-        currentMenu._select(currentMenu.get_index() + 1, 0)
-        time.sleep(0.15)
-    if GPIO.input(13): #ARROW DOWN
-        currentMenu._select(currentMenu.get_index() - 1, menuSize)
-        time.sleep(0.15)
-    if GPIO.input(40): #ARROW RIGHT
-        currentMenu.get_selected_widget().apply()
-        time.sleep(0.15)
+    # #GPIO CONTROLLERS SETUP
+    # GPIO.setup(13,GPIO.OUT)
+    # GPIO.output(13,GPIO.LOW)
+    # GPIO.setup(15, GPIO.OUT)
+    # GPIO.output(15, GPIO.LOW)
+    # GPIO.setup(40, GPIO.OUT)
+    # GPIO.output(40, GPIO.LOW)
+    # time.sleep(0.1)
+    # GPIO.setup(15,GPIO.IN) #ARROW UP
+    # GPIO.setup(13,GPIO.IN) #ARROW DOWN
+    # GPIO.setup(40,GPIO.IN) #ARROW RIGHT
+    # menuSize=0
+    # if currentMenu==mainMenu or currentMenu==endGameMenu:
+    #     menuSize=2
+    # elif currentMenu==highScoreMenu or currentMenu==gameMenu:
+    #     menuSize=3
+    # elif currentMenu==highScoreDisplay:
+    #     menuSize=0
+    #
+    # if GPIO.input(15): #ARROW UP
+    #     currentMenu._select(currentMenu.get_index() + 1, 0)
+    #     time.sleep(0.15)
+    # if GPIO.input(13): #ARROW DOWN
+    #     currentMenu._select(currentMenu.get_index() - 1, menuSize)
+    #     time.sleep(0.15)
+    # if GPIO.input(40): #ARROW RIGHT
+    #     currentMenu.get_selected_widget().apply()
+    #     time.sleep(0.15)
     
     
 

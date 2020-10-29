@@ -1,7 +1,7 @@
 import os
 import random
 import time
-import RPi.GPIO as GPIO
+# import RPi.GPIO as GPIO
 import pygame
 from pygame import mixer
 
@@ -41,30 +41,31 @@ class Player(pygame.sprite.Sprite):
 
     def update(self):
         self.speed_x = 0
-        #GPIO CONTROLLERS SETUP
-        GPIO.setup(13,GPIO.OUT)
-        GPIO.output(13,GPIO.LOW)
-        GPIO.setup(15, GPIO.OUT)
-        GPIO.output(15, GPIO.LOW)
-        GPIO.setup(40, GPIO.OUT)
-        GPIO.output(40, GPIO.LOW)
-        GPIO.setup(15,GPIO.IN) #ARROW UP
-        GPIO.setup(13,GPIO.IN) #ARROW DOWN
-        GPIO.setup(40,GPIO.IN) #ARROW DOWN
-        if GPIO.input(15):
-            self.speed_x = 9
-        if GPIO.input(13):
-            self.speed_x = -9
-        if GPIO.input(40):
-            self.shoot()
+        # #GPIO CONTROLLERS SETUP
+        # GPIO.setup(13,GPIO.OUT)
+        # GPIO.output(13,GPIO.LOW)
+        # GPIO.setup(15, GPIO.OUT)
+        # GPIO.output(15, GPIO.LOW)
+        # GPIO.setup(40, GPIO.OUT)
+        # GPIO.output(40, GPIO.LOW)
+        # GPIO.setup(15,GPIO.IN) #ARROW UP
+        # GPIO.setup(13,GPIO.IN) #ARROW DOWN
+        # GPIO.setup(40,GPIO.IN) #ARROW DOWN
+        # if GPIO.input(15):
+        #     self.speed_x = 9
+        # if GPIO.input(13):
+        #     self.speed_x = -9
+        # if GPIO.input(40):
+        #     self.shoot()
     
+        keys=pygame.key.get_pressed()
+        if keys[pygame.K_LEFT]:
+            self.speed_x = -9
+        if keys[pygame.K_RIGHT]:
+            self.speed_x = 9
+        if keys[pygame.K_SPACE]:
+            self.shoot()
 
-#         if keys[pygame.K_LEFT]:
-#             self.speed_x = -9
-#         if keys[pygame.K_RIGHT]:
-#             self.speed_x = 9
-#         if keys[pygame.K_SPACE]:
-#             self.shoot()
         self.rect.x += self.speed_x
         if self.rect.right > WIDTH:
             self.rect.right = WIDTH
