@@ -27,7 +27,7 @@ def startGame():
     largeFont = pygame.font.SysFont('comicsans', 50)  # Font object
 
     inGame = True
-    speed = [10,10]
+    speed = [1,1]
     black = 0, 0, 0
 
     while inGame:
@@ -44,20 +44,20 @@ def startGame():
     #     GPIO.setup(13,GPIO.IN) #ARROW DOWN
     #     if GPIO.input(15):
     #         if linerect.top < height - 93:
-    #             linerect.top = linerect.top + 8
+    #             linerect.top = linerect.top + 2
     #     if GPIO.input(13):
     #         if linerect.top > 0:
-    #             linerect.top = linerect.top - 8
+    #             linerect.top = linerect.top - 2
     
 
         #Line controller
         key = pygame.key.get_pressed()
         if key[pygame.K_DOWN]:
             if linerect.top < height - 93:
-                linerect.top = linerect.top + 3
+                linerect.top = linerect.top + 2
         if key[pygame.K_UP]:
             if linerect.top > 0:
-                linerect.top = linerect.top - 3
+                linerect.top = linerect.top - 2
 
         # Ball movement
         ballrect = ballrect.move(speed)
