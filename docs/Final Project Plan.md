@@ -28,6 +28,7 @@ As for the software, it is the direct impression of the system for our users. Sp
 
 
 ## 5. Design (How to map application onto Hardware and Software)
+![alt text](https://gitlab.utwente.nl/cs20-28/rasppberifornow/-/raw/master/docs/Software%20Design%20Document/Diagram_1.jpg)
 To begin with, we will explain what hardware and software we use for our design. Our game console has a user interface and a few games. The software used for the implementation is the pygame library for the games and the pygame_menu library for the user interface. For navigation through the interface and playing games touch sensors are used and for that we need the GPIO from the Raspberry Pi.
 We also have three UML diagrams which are pretty straightforward and explain our design.Our main actor is the player who interacts with our system(gaming console) by playing various games. Our Activity diagram shows what steps a player follows when he is using our console. When he turns it on he can enter settings or pick a game. Then he will play until he has lost and his score will be displayed afterwards. After finishing the game, he can try again or pick a different one. 
 Then we have our Use case diagram which is pretty similar. It shows all activities the player can do while using our system like playing a game, finishing a game , and entering settings.
