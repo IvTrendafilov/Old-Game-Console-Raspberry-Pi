@@ -187,7 +187,7 @@ def main():
         GPIO.setup(15, GPIO.IN)  # ARROW UP
         if GPIO.input(15) and game_active:
             bird_movement = 0
-            bird_movement -= 10
+            bird_movement -= 4
             time.sleep(0.1)
         if GPIO.input(15) and game_active==False:
             game_active = True
