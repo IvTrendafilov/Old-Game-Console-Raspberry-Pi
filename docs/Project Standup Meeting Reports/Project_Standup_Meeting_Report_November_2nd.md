@@ -5,7 +5,7 @@
 | *Project Name:*          |     Interactive Game Console  |
 | *Meeting Date:*          |    November 2nd |
 | *Present Team members:*  |  Stefan Ilich, Ivan Trendafilov, Pavel Hristov, Vladi Avramov, Tudor Nechiti, Stefan Simionescu|
-| *Team ID:*               |     29           |
+| *Team ID:*               |     28           |
 | *Scrum  Master:*         |    Stefan Ilich| 
 | *Scrum  Mentor:*         |    Sibren Vasse  |
  
